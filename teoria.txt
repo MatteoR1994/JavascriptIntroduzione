@@ -105,6 +105,14 @@ Es2: if(true) {
     SEMPRE!
 
 /*********************************************************************************************************/
+
+break; Interrompe tutto il ciclo
+
+continue; Interrompe solo il giro corrente del ciclo, alla sua fine il ciclo va avanti con il secondo giro e così via.
+
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
 CODICE DI ESEMPIO
 
 let numero = 5;
