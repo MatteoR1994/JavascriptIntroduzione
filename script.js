@@ -1,60 +1,171 @@
-// OPERAZIONI BASE DI JAVASCRIPT: 
-//  + = addizione
-//  - = sottrazione
-//  * = moltiplicazione
-//  / = divisione
-//  % = resto della divisione
-// ** = potenza
+// let pippo = "Ciao a tutti!";
 
-// Per altre cose, non di base di javascript, usare libreria Math
-// Es: sqrt = radice quadrata
+// console.log("log pippo", pippo);
 
-// NUMERI
-// Numeri con la virgola vanno messi col .
-// Posso usare anche la notazione scientifica. Es: 2.998e8 --> 2.998 x 10^8
-// -Infinity / Infinity = -Infinito / (+)Infinito
-// NaN = Not a Number
+// pippo = "Ciao ad alcuni!";
 
-// STRINGHE
-// Nessuna distinzione tra stringa, come insieme di caratteri, e carattere singolo. Tutto è stringa
-// Modi per scrivere stringhe:
-//  - "stringa"
-//  - 'stringa'
-//  ` = Backtrick (ALT+96). Usato per eseguire codice all'interno della stringa. Es: `half of 100 is ${100/2}`
-// Modi per unire le stringhe:
-//  - "pippo" + "mangia" + "una" + "mela". Se voglio gli spazi devo aggiungerli come stringhe singole = "pippo" + " " + "mangia" + " " + "una" + " " + "mela"
-// Es: "pippo" * 6 = Nan
-//     "3" * 6 = 18
-// Perché javascript forza le conversioni.
-// == -> Operatore uguaglianza 1. Es: "3" == 3 darà true, anche se non è vero. Perché forza le conversioni.
-// === -> Operatore uguaglianza 2. Es: "3" === 3 darà false
-// "Ciao a tutti"[2] = prendo l'elemento con indice 2 nella stringa (partendo da 0), quindi il terzo.
+// console.log("log 2 di pippo", pippo);
 
-// typeof 5 = gli chiedo di che tipo è la cosa che gli passo. Es: typeof 5 = number / typeof "pippo" = string
+/*********************************************************************************************************/
 
-// Per noi la conversione forzata (quindi ==), se non richiesta, non è gradita. Per le uguaglianze usare ===. Per il contrario usare !==.
+// let luto, paperino;
 
-// CONFRONTI
-// 5 < 4 = false / 5 > 4 = true
-// 5 <= 5 = true / 5 >= 6 = false
-// 5 !== 5 = false
+/*********************************************************************************************************/
 
-// OPERATORI LOGICI
-// A noi servono:
-//  - ! = not. Cambia il valore booleano nel suo opposto, si usa su un elemento solo (elemento unario). Es: !true = false / !false = true
-//  - && = and. Operatore binario, su 2 elementi. Es: true && true = true / true && false = false / false && true = false / false && false = true. && è vero solo se entrambe le condizioni sono vere.
-//  - || = or. Operatore binario, su 2 elementi. Es: true || true = true / true || false = true / false || true = true / false || false = false. || è vero se almeno una delle condizioni è vera.
-// Sistema completo = se ha NOT - AND - OR.
+// let operazione = 5 + 6;
 
-// OPERATORE TERNARIO
-// (5 > 7) ? 1 : 2 = Se (5 > 7) è vera, prendi 1. Se è falsa prendi 2.
+// console.log("log operazione", operazione);
 
-// VALORE VUOTO = valore di una variabile quando non è stata riempita con niente
-//  - null
-//  - undefined
-// Sono quasi identici. La convezione è: null = definita dai programmatori quando si vuole indicare qualcosa come vuoto / undefined = lasciamo che lo usi javascript, come valore restituito.
-// Forzando la conversione, 8 * null darà 0. Perchè javascript un valore vuoto lo forza a 0.
+// if (operazione < 10) {
+//     console.log("sono passato dall'if");
+// } else {
+//     console.log("non sono passato dall'if");
+// }
 
-// Nella conversione forzata, nel * vince quella a numero, nel + quella a stringa.
+/*********************************************************************************************************/
 
-console.log( (5 < 7) ? 1 : 2 );
+// let numero3 = 0;
+
+// if (numero3 > 0) {
+//     console.log("il numero è positivo");
+// } else if (numero3 === 0) {
+//     console.log("il numero è uguale a 0");
+// } else {
+//     console.log("il numero è negativo");
+// }
+
+/*********************************************************************************************************/
+
+// let numero4 = 16;
+
+// if (numero4 >= 0) {
+//     console.log("maggiore o uguale di 0");
+// } else if (numero4 > 10) {
+//     console.log("maggiore di 10");
+// } else if (numero4 > 20) {
+//     console.log("maggiore di 20");
+// } else {
+//     console.log("minore di 0");
+// }
+
+// Se ci sono condizioni più e meno restrittive, nella costruzione dell'if bisogna partire con le condizioni più restrittive e andare a scendere fino alle più "morbide"
+
+// if (numero4 > 20) {
+//     console.log("maggiore o uguale di 0");
+// } else if (numero4 > 10) {
+//     console.log("maggiore di 10");
+// } else if (numero4 >= 0) {
+//     console.log("maggiore di 20");
+// } else {
+//     console.log("minore di 0");
+// }
+
+/*********************************************************************************************************/
+
+// let numero5 = 12;
+
+// if (numero5 % 2 === 0) {
+//     console.log("divisibile per 2");
+// } else if (numero5 % 3 === 0) {
+//     console.log("divisibile per 3");
+// }
+
+// A volte l'else non serve, basta mettere un altro if. Come per esempio nella ricerca dei divisibili.
+
+// if (numero5 % 2 === 0) {
+//     console.log("divisibile per 2");
+// }
+// if (numero5 % 3 === 0) {
+//     console.log("divisibile per 3");
+// }
+
+/*********************************************************************************************************/
+
+// console.log("WHILE");
+// let i = 0;
+
+// while (i < 10) {
+//     console.log(i);
+//     i = i + 1;
+// }
+
+// console.log("do..WHILE");
+// let j = 0;
+
+// do {
+//     console.log(j);
+//     j = j + 1;
+// } while (j < 10);
+
+// console.log("FOR");
+// for (let k = 0; k < 10; k++) {
+//     console.log(k);
+// }
+
+/*********************************************************************************************************/
+
+// k = k + 1;
+// // è uguale a
+
+// k++; // Solo quando aumenta di 1
+// k+=n; // Quando si aumenta di n
+
+// /**/
+
+// k = k - 1;
+// // è uguale a
+
+// k--; // Solo quando diminuisce di 1
+// k-=n; // Quando si diminuisce di n
+
+/*********************************************************************************************************/
+
+// break; Interrompe tutto il ciclo
+
+// continue; Interrompe solo il giro corrente del ciclo, alla sua fine il ciclo va avanti con il secondo giro e così via.
+
+/*********************************************************************************************************/
+
+// let stringa = "#";
+
+// for (let i = 0; i < 7; i++) {
+//     console.log(stringa);
+//     stringa += "#"
+// }
+
+// for (let a = "#"; a !== "########"; a+="#") {
+//     console.log(a);
+// }
+
+
+// let i = 3;
+// let k = 5;
+
+
+
+/* CONTROLLO NUMERI DIVISIBILI PER 3 E PER 5
+for (let i = 1; i < 100; i++) {
+    let str = '';
+    if (i % 3 === 0) {
+        str += 'Fritz';
+    } else if (i % 5 === 0) {
+        str += 'Buzz';
+    }
+    console.log(str.length > 0 ? str : i);
+}*/
+
+let grid = ``;
+
+for (let i = 0; i < 10; i++) {
+    for (let j= 0; j < 10; j++){
+        grid = grid + "# ";
+        //console.log(`Linea ${i}, carattere ${j}`);
+    }
+    if(grid.length== 100){
+        break;
+    }else{
+        grid = grid + '\n';
+    }
+}
+
+console.log(grid);
