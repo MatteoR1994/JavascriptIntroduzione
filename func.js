@@ -278,3 +278,13 @@ console.log(countChar("pippPo", "p", true));*/
 //      - 0! = 1
 //      - 1! = 1
 //      - n! = n * (n - 1)
+
+function fibonacciNonRicorsiva() {
+    let i = 0;
+    let psx = 0;
+    let pdx = 1;
+    let str = "0, 1, ";
+    while(i <= 98) {
+        
+    }
+}
