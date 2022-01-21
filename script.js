@@ -1,43 +1,51 @@
-// Cap. 2 - "Looping a triangle"
-// MIA SOLUZIONE
-/*let stringa = "#";
-for (let i = 0; i < 7; i++) {
-    console.log(stringa);
-    stringa += "#"
+/*let type = 0;
+
+switch (type) {
+    case 0:
+        console.log("Hai comprato un cosmetico");
+        break;
+    case 1:
+        console.log("Hai comprato un balsamo");
+        break;
+    case 2:
+        console.log("Hai comprato uno shampoo");
+        break;
+    default: // Caso che non rientra tra quelli definiti.
+        console.log("errore di tipologia");
+        break;
 }*/
 
-//MIA SOLUZIONE ALTERNATIVA
-/*let stringa = "#";
-for (let a = "#"; a !== "########"; a+="#") {
-    console.log(a);
+/****/
+
+/*let type2 = 37;
+
+switch (true) {
+    case (type2 > 10):
+        console.log("Hai comprato un cosmetico");
+        break;
+    case (type2 > 20):
+        console.log("Hai comprato un balsamo");
+        break;
+    default:
+        break;
 }*/
 
-/*********************************************************************************************************/
+// Se voglio controllare più casi insieme, levo il break tra un caso e l'altro.
+// Es: Controllare se un numero è pari o dispari
 
-// Cap. 2 - "FizzBuzz"
-/*for (let i = 1; i <= 100; i++) {
-    if (i % 15 === 0) {
-        console.log("FizzBuzz");
-    } else if (i % 5 === 0) {
-        console.log("Buzz");
-    } else if (i % 3 === 0) {
-        console.log("Fizz");
-    } else {
-        console.log(i);
-    }
+/*let type3 = 12;
+
+switch (true) {
+    case (type3 % 2 === 0):
+        console.log("pari");
+        // break;
+    case (type3 % 3 === 0):
+        console.log("dispari");
+        // break;
+    default:
+        console.log("sticazzi");
+        break;
 }*/
 
-/*********************************************************************************************************/
+/*********************************************************************************/
 
-// Cap. 2 - "Chessboard"
-/*let str = "";
-let size = 8;
-
-for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-        (i + j) % 2 === 0 ? str += " " : str += "#";
-    }    
-    str += "\n";
-}
-
-console.log(str);*/

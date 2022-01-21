@@ -30,7 +30,7 @@ for (let a = "#"; a !== "########"; a+="#") {
 /*********************************************************************************************************/
 
 // Cap. 2 - "Chessboard"
-let str = "";
+/*let str = "";
 let size = 8;
 
 for (let i = 0; i < size; i++) {
@@ -41,3 +41,20 @@ for (let i = 0; i < size; i++) {
 }
 
 console.log(str);
+
+
+VERSIONE ANDREA:
+
+let str2 = "";
+let size2 = 8;
+
+for (let i = 0; i < size2; i++) {
+    for (let j = 0; j < size2; j++) {
+        (i % 2 === 0) ? ((j % 2 === 0) ? str2 += " " : str2 += "#") : ((j % 2 === 0) ? str2 += "#" : str2 += " ");
+    }    
+    str2 += "\n";
+}
+
+console.log(str2);
+
+*/
