@@ -120,3 +120,28 @@
 
 /*********************************************************************************************************/
 
+/*CODICE DI ESEMPIO
+
+let numero = 5;
+
+console.log("prima assegnazione della variabile numero", numero);
+
+numero = 7;
+
+console.log("seconda assegnazione della variabile numero", numero);
+
+const costante = 12;
+
+console.log("definizione della costante costante", costante);
+
+// costante = 13;
+
+// console.log("secondo log costante", costante);
+
+var numero2 = 27;
+
+console.log("log var", numero2);
+
+numero2 = 59;
+
+console.log("secondo log var", numero2);*/

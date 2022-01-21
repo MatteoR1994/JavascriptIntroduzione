@@ -30,7 +30,7 @@ for (let a = "#"; a !== "########"; a+="#") {
 /*********************************************************************************************************/
 
 // Cap. 2 - "Chessboard"
-/*let str = "";
+let str = "";
 let size = 8;
 
 for (let i = 0; i < size; i++) {
@@ -40,4 +40,4 @@ for (let i = 0; i < size; i++) {
     str += "\n";
 }
 
-console.log(str);*/
+console.log(str);
