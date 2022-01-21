@@ -88,13 +88,13 @@ console.log(fibonacci(10));*/
 
 /*********************************************************************************/
 
-function somma(primoNumero, secondoNumero) {
+/*function somma(primoNumero, secondoNumero) {
     return primoNumero + secondoNumero;
 }
 
 let risultato = somma();
 
-console.log(risultato);
+console.log(risultato);*/
 
 /****/
 
@@ -194,18 +194,87 @@ console.log(res2);*/
 
 // 1) Minimum
 
-function minimum(numberOne, numberTwo) {
+/*function minimum(numberOne, numberTwo) {
     /*if (numberOne < numberTwo) {
         return numberOne;
     } else {
         return numberTwo;
     }*/
-    return (numberOne < numberTwo) ? numberOne : numberTwo;
+    /*return (numberOne < numberTwo) ? numberOne : numberTwo;
 }
 
-console.log(minimum(5, 3));
+console.log(minimum(5, 3));*/
 
 /****/
 
 // 2) Recursion
 
+/*function isEven(number) {
+    if (number === 0) {
+        return true;
+    }
+    if (number === 1) {
+        return false;
+    }
+    if (number > 0) {
+        return isEven(number - 2);
+    } else {
+        return isEven(number + 2);
+    }
+    //return (number > 0) ? isEven(number - 2) : isEven(number + 2);
+    //return isEven(number + ((number > 0) ? -2 : 2));
+}
+
+console.log(isEven(50));
+// → true
+console.log(isEven(75));
+// → false
+console.log(isEven(-4));*/
+// → undefined
+
+/****/
+
+// 3) Bean counting
+
+/*function countBs(myString) {
+    let count = 0;
+    for (let i = 0; i < myString.length; i++) {
+        if (myString[i] === 'B') {
+            count++;
+        }        
+    }
+    return count;
+}
+
+function countChar(myString, myChar, caseSensitive = false) { // Da migliorare facendo in modo che se cerco un carattere lo trovi indipendentemente dal fato che sia maiuscolo o minuscolo
+    if (!caseSensitive) {
+        myString = myString.toLowerCase();
+        myChar = myChar.toLowerCase();
+    }
+    let count = 0;
+    for (let i = 0; i < myString.length; i++) {
+        if (myString[i] === myChar) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countBs("BaBBo"));
+
+console.log(countChar("pippPo", "p", true));*/
+
+/****/
+
+// ESERCIZI PER CASA
+
+// Fare una funzione non ricorsiva che scrive i primi 100 numeri della successione di fibonacci
+
+// Funzione fibonacci non ricorsiva. Data una posizione, mi dia il valore di fibonacci corrispondente (vedi quella fatta in classe)
+
+// Funzione che dato un numero mi individui la sua posizione nella successione di fibonacci. Se il numero non è nella successione, dia undefined
+
+// Implementare con ricorsione la funzione fattoriale:
+//      - 0! = 1
+//      - 1! = 1
+//      - n! = n * (n - 1)
