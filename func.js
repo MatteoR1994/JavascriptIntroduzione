@@ -268,23 +268,111 @@ console.log(countChar("pippPo", "p", true));*/
 
 // ESERCIZI PER CASA
 
-// Fare una funzione non ricorsiva che scrive i primi 100 numeri della successione di fibonacci
+// 1) Fare una funzione non ricorsiva che scrive i primi 100 numeri della successione di fibonacci
 
-// Funzione fibonacci non ricorsiva. Data una posizione, mi dia il valore di fibonacci corrispondente (vedi quella fatta in classe)
+// 2) Funzione fibonacci non ricorsiva. Data una posizione, mi dia il valore di fibonacci corrispondente (vedi quella fatta in classe)
 
-// Funzione che dato un numero mi individui la sua posizione nella successione di fibonacci. Se il numero non è nella successione, dia undefined
+// 3) Funzione che dato un numero mi individui la sua posizione nella successione di fibonacci. Se il numero non è nella successione, dia undefined
 
-// Implementare con ricorsione la funzione fattoriale:
+// 4) Implementare con ricorsione la funzione fattoriale:
 //      - 0! = 1
 //      - 1! = 1
 //      - n! = n * (n - 1)
 
-function fibonacciNonRicorsiva() {
-    let i = 0;
+// 1) FUNZIONA.
+/*function fibonacciNonRicorsiva() {
     let psx = 0;
     let pdx = 1;
-    let str = "0, 1, ";
-    while(i <= 98) {
-        
+    let str = "";
+    for (let i = 0; i < 100; i++) {
+        // str += `${psx}, ${pdx}, `;
+        str += `Pos. ${i + 1} - ${psx}\n`;
+        let sum = psx + pdx;
+        psx = pdx;
+        pdx = sum;
+    }
+    return str;
+}
+
+console.log(fibonacciNonRicorsiva());*/
+
+/**/
+
+// 2) FUNZIONA.
+// Se non si considera il primo 0
+/*function fibonacciNonRicorsivaLimite(position) {
+    let psx = 0;
+    let pdx = 1;
+    for (let i = 0; i < position; i++) {
+        number = psx;
+        let sum = psx + pdx;
+        psx = pdx;
+        pdx = sum;
+    }
+    return psx;
+}*/
+
+// Se si considera il primo 0
+/*function fibonacciNonRicorsivaLimite(position) {
+    let psx = 0;
+    let pdx = 1;
+    let number;
+    for (let i = 0; i < position; i++) {
+        number = psx;
+        let sum = psx + pdx;
+        psx = pdx;
+        pdx = sum;
+    }
+    return number;
+}
+
+let customPosition = 10;
+
+console.log(`Numero di Fibonacci alla posizione ${customPosition}: ${fibonacciNonRicorsivaLimite(customPosition)}`);*/
+
+/**/
+
+// 3) FUNZIONA.
+/*function fibonacciNonRicorsivaLimite(target) {
+    let psx = 0;
+    let pdx = 1;
+    let i = 0;
+    while (psx < target) {
+        let sum = psx + pdx;
+        psx = pdx;
+        pdx = sum;
+        i++;
+    }
+    if (psx === target) {
+        return i;
+    } else {
+        return ;
     }
 }
+
+let numeroDaTrovare = 34;
+
+let result = fibonacciNonRicorsivaLimite(numeroDaTrovare);
+
+if (result === undefined) {
+    console.log(`${numeroDaTrovare} non fa parte della sequenza di Fibonacci.`);
+} else {
+    console.log(`${numeroDaTrovare} dentro Fibonacci sta alla posizione: ${result}`);
+}*/
+
+/**/
+
+// 4) FUNZIONA.
+/*function fattoriale(number) {
+    if (number === 0) {
+        return 1;
+    }
+    if (number === 1) {
+        return 1;
+    }
+    return number * fattoriale(number - 1);
+}
+
+let numero = 9;
+
+console.log(`${numero}! = ${fattoriale(numero)}`);*/
