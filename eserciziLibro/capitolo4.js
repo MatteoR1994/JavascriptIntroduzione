@@ -22,6 +22,26 @@ function rangeWithStep(start, end, step = 1) {
     return array;
 }
 
+// VERSIONE ANDREA
+/*function rangeStep(max, min = 0, step = 1) {
+    let array = [];
+
+    let start = step > 0 ? min : max;
+
+    let end;
+
+    if(step > 0) {
+        end = max;
+    } else {
+        end = min;
+    }
+
+    for (let i = start; i <= end; i++) {
+        array.push(i);      
+    }
+    return array;
+}*/
+
 function sum(numbers) {
     let resultSum = 0;
     for (const element of numbers) {
@@ -36,11 +56,12 @@ let s = -2;
 
 //let generatedNumbers = range(psx, pdx);
 let generatedNumbers = rangeWithStep(psx, pdx);
+//let generatedNumbers = rangeStep(25, 2, 2);
 //let generatedNumbers = rangeWithStep(psx, pdx, s);
 
-console.log(generatedNumbers);
+console.log("Numeri generati: " + generatedNumbers);
 
-console.log(sum(generatedNumbers));
+console.log("La loro somma: " + sum(generatedNumbers));
 
 /*********************************************************************************************************/
 
@@ -75,20 +96,23 @@ function reverseArrayInPlace(myArray2) {
         myArray2[i] = myArray2[dimension-1-i];
         myArray2[dimension-1-i] = temp;
     }*/
-    return myArray2;
+    //return myArray2;
 }
 
 /****/
 
-//let arrayToReverse = ["A", "B", "C"];
 let arrayToReverse = [1, 2, 3, 4, 5];
 
 let revArray = reverseArray(arrayToReverse);
 
-arrayToReverse = reverseArrayInPlace(arrayToReverse);
+console.log("Array origine: " + arrayToReverse);
 
-console.log(revArray);
+console.log("Array inverso (copia): " + revArray);
 
-console.log(arrayToReverse);
+//arrayToReverse = reverseArrayInPlace(arrayToReverse);
 
-//console.log(reverseArray(arrayToReverse));
+reverseArrayInPlace(arrayToReverse);
+
+console.log("Array inverso (origine): " + arrayToReverse);
+
+console.log("Array origine (dopo inversione): " + arrayToReverse);
