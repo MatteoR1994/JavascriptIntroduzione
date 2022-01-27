@@ -74,7 +74,7 @@ console.log(resultList2);
 
 /****/
 
-function nth(list, position) {
+function nth(list, position) { // Versione non ricorsiva
     if (list === null) {
         return ;
     }
@@ -93,6 +93,28 @@ function nth(list, position) {
     return number;
 }
 
+function nth2(listNode, index, startIndex) { // Versione ricorsiva, con variabile appoggio (passata come terzo paramentro della funzione)
+    if (listNode === null) {
+        return undefined;
+    }
+    if (startIndex === index) {
+        return listNode.value;
+    }
+    let node = listNode.rest;
+    startIndex++;
+    return nth2(node, index, startIndex);
+}
+
+function nth3(listNode, index) {// Versione ricorsiva, senza variabile appoggio
+    if (listNode === null) {
+        return undefined;
+    }
+    if (index === 0) {
+        return listNode.value;
+    }
+    return nth3(listNode.rest, index-1);
+}
+
 let wantedPosition = 4;
 
 let arrayForList = [2, 6, 24, 39, 102, 4];
@@ -100,6 +122,10 @@ let arrayForList = [2, 6, 24, 39, 102, 4];
 let listForSearch = arrayToList(arrayForList);
 
 console.log(`Number at position ${wantedPosition}: ` + nth(listForSearch, wantedPosition));
+
+//console.log(`Number at position ${wantedPosition}: ` + nth2(listForSearch, wantedPosition, 0));
+
+//console.log(`Number at position ${wantedPosition}: ` + nth3(listForSearch, wantedPosition));
 
 /*********************************************************************************************************/
 
