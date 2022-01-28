@@ -20,6 +20,7 @@ let isNegative3 = (element) => element < 0; // elemento in input => ciò che sto
 
 /** Le funzioni che passeremo al filter avranno non solo l'elemento da controllare ma anche l'indice dell'array **/
 
+
 /*********************************************************************************************************/
 
 
@@ -116,3 +117,9 @@ console.log(array3.map((e, i) => e * i));
 
 console.log(array3.map(elementIndexProduct)
                   .filter(isNegative));
+
+
+/*****************************************************************************/
+
+// REDUCE
+

@@ -1,4 +1,4 @@
-// ESERCIZIO 1
+// ESERCIZIO 1 (scrivere anche la versione alternativa dei filtri e map a cquella scelta)
 
 
 let testArray1 = [12, 57, 1001, -67, -12, 5, 27, 48, -6000];
