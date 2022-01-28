@@ -114,4 +114,5 @@ console.log(array3.map((e, i) => e * i));
 
 /** FILTER e MAP sono concatenabili **/
 
-console.log(array3.map(elementIndexProduct).filter(isNegative));
+console.log(array3.map(elementIndexProduct)
+                  .filter(isNegative));
