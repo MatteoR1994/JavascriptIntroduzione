@@ -36,4 +36,8 @@ console.log("Array originale", array);
 
 console.log("Array or. senza i maggiori di 100", filterGreatherOf100(array));
 
-console.log("Array or. senza i minori di 30", filter(array, greatherOf30));
+console.log("Mia filter - Array or. senza i minori di 30", filter(array, greatherOf30));
+
+
+// La funzione filter viene usata ormai talmente tanto, che gli array ne hanno una integrata.
+console.log("JS filter - Array or. senza i minori di 30", array.filter(greatherOf30));
