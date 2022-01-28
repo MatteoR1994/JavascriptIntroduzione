@@ -33,4 +33,11 @@ let modifiedArray2
 /// Quello che viene viene fuori dalla reduce di questo array è la stringa "La casa ha preso fuoco"
 let testArray3 = ["la", "vergogna", "casa", "dannazione", "ha", "pippo", "preso", "secchio", "fuoco"];
 
+
+function phrase(previous, current, index) {
+    if (index %2 === 0) {
+        
+    }
+}
+
 /*********************************************************************************************************/
