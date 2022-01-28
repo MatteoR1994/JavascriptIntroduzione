@@ -102,35 +102,21 @@ console.log(numbers);
 
 // Terzo esercizio
  
-/* Funzione che fa clear da un array con più dati [1,2, true, 3, pippo, false] */
+/* Funzione che fa clear da un array con più dati [1,2, true, 3, pippo, false], restituendo quello pulito */
  
-let arrayToClear = [1, 2, true, 3, "pippo", false];
+let trashArray = [1, 2, true, 3, "pippo", false];
  
-function arrayCleaner(){
-    
-}
- 
-arrayCleaner();
-
-/*********************************************************************************************************/
-
-// Clear array (mia versione, prova)
-let array = [1, 2, 3, true, "pippo", false, "paperino"];
-
-function clearArray(type) {
-    for (let i = 0; i < array.length; i++) {
-        console.log(typeof array[i]);
-        if (typeof array[i] !== type) {
-            array.splice(i, 1);
+function cleanArray(arrayToClean, permittedType) { // VERSIONE ANDREA (docente)
+    let tempArray = [];
+    for (const element of arrayToClean) {
+        if (typeof element === permittedType) {
+            tempArray.push(element);
         }
     }
+    return tempArray;
 }
+ 
+console.log("Array originale: ", trashArray);
+console.log(cleanArray(trashArray, "number"));
 
-let typeOf = "number";
-
-console.log("Tipo: " + typeOf);
-console.log("Array originario: ", array);
-
-clearArray(array);
-
-console.log("Array originario dopo pulizia: ", array);
+/*********************************************************************************************************/
