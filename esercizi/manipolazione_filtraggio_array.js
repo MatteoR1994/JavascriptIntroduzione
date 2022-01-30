@@ -99,3 +99,14 @@ function sumArray(previous, current) {
 }
 
 console.log(numeri.reduce(sumArray, 0));
+
+/*********************************************************************************************************/
+
+let arrays = [[1, 2, 3], [4, 5], [6]];
+
+function flatten(previous, current) {
+    previous = previous.concat(current);
+    return previous;
+}
+
+console.log(arrays.reduce(flatten, []));
