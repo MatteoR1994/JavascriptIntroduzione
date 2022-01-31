@@ -7,11 +7,11 @@ let testArray2 = ["pippo", "pluto", "paperino", "topolino", "paperone", "paperog
 
 
 /// Teniamo i numeri divisibili per 3; /// FILTER
-let filteredArray1 = 0;  
+let filteredArray1 = 0;
 
 
 /// Teniamo le stringhe che sono più lunghe di 6 caratteri; /// FILTER
-let filteredArray2 = 0;  
+let filteredArray2 = 0;
 
 
 /// Tutti i numeri dovranno essere ridotti del 10% /// MAP
@@ -83,11 +83,29 @@ e vado avanti così fino alla fine dell'array.
 
 //console.log(testArray3.reduce(phrase, ""));
 
-console.log(testArray3.reduce(phrase));
+console.log("Mia reduce (con funzione):", testArray3.reduce(phrase));
 
-//console.log(testArray3.reduce((p, c, i) => i % 2 !== 0 ? p : p + " " + c));
+// VERSIONE ANDREA: console.log(testArray3.reduce((p, c, i) => i % 2 !== 0 ? p : p + " " + c));
 
-//console.log(testArray3.reduce((p,c,i) => i%2===0 ? p + " " + c : p));
+// VERSIONE ANDREA (con funzione invece della lambda)
+
+function removeOddAndConcatenate(previous, current, index) { // Quello che torna questa funzione, al giro successivo sarà "previous".
+    // let tempString = previous;
+    // if (index % 2 !== 0) {
+    //     return tempString;
+    // } else {
+    //     tempString = tempString + " " + current;
+    //     return tempString;
+    // }
+
+    if (index % 2 !== 0) {
+        return previous;
+    } else {
+        return previous + " " + current;
+    }
+}
+
+console.log("Reduce di Andrea (con funzione):", testArray3.reduce(removeOddAndConcatenate));
 
 /*********************************************************************************************************/
 
@@ -110,3 +128,240 @@ function flatten(previous, current) {
 }
 
 console.log(arrays.reduce(flatten, []));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let array = [12, 345, -1234, 1, 0, 23456, -2, 2, 3];
+
+let array1 = ["Pippo", "Paperone", "Gambadilegno", "Basettoni", "Clarabella", "Osvaldo"]
+
+// esercizio 1
+
+console.log(array.reduce(() => Math.max(...array)));
+
+
+//esercizio 2
+
+console.log(array.filter((element) => element < 0).reduce(() => Math.min(...array)));
+
+//esercizio 3
+
+function somma(previous, current) {
+   
+    if (current % 2 === 0) {
+        return previous + current;
+    }else{
+        return previous;
+    }
+}
+
+console.log(array.reduce(somma));
+
+console.log(array.reduce((p, c) => c % 2 === 0 ? p + c : p));
+
+////////////////////////////////
+
+let stringCheck ="pippo";
+
+function checkIftringContainsAVowel(string) {
+    for (let i = 0; i < string.length; i++) {
+        const char = string[i];
+        
+        if (char === "a") {
+            return true;
+        }
+        if (char === "e") {
+            return true;
+        }
+        if (char === "i") {
+            return true;
+        }
+        if (char === "o") {
+            return true;
+        }
+        if (char === "u") {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+// array.some()
+
+// array.every()
+
+
+function checkIftringContainsAVowel3(string) {
+    // let vowels = ["a", "e", "i", "o", "u"];
+    // return vowels.some((v) => string.includes(v));
+    return ["a", "e", "i", "o", "u"].some((v) => string.includes(v));
+    
+}
+
+console.log("controllo",checkIftringContainsAVowel3(stringCheck));
+
+
+///////////////////////////////////////////////
+
+function arrayOfVowels(string) {
+    let arrayFromString = [...string];
+    let vowelsArray = arrayFromString.filter(checkIftringContainsAVowel);
+    return vowelsArray;
+}
+
+
+console.log("Controllo stringa", arrayOfVowels(stringCheck));
+
+
+function buildArray(previous, current) {
+    previous.push(...arrayOfVowels(current));
+    return previous;
+}
+
+console.log(array1.reduce(buildArray, []));
+
+
+// let arrayOfCon = arrayOfConsonants(string);
+
+// let setOfConsonants = new Set(arrayOfCon);
+
+// let stringOfCon = [...setOfConsonants].join("");
+
+// console.log(setOfConsonants);
+
+
+
+function checkIftringNONContainsAVowel3(string) {
+    // let vowels = ["a", "e", "i", "o", "u"];
+    // return vowels.some((v) => string.includes(v));
+    return ["a", "e", "i", "o", "u"].some((v) => string.includes(v));
+    
+}
+
+function arrayOfConsonants(string){
+    let arrayFromString = [...string];
+    let vowelsArray = arrayFromString.filter(checkIftringNONContainsAVowel3)
+    return vowelsArray;
+}
+
+
+function buildArray1(previous, current) {
+    previous.push(...arrayOfConsonants(current));
+    return previous;
+}
+
+console.log(array1.reduce(buildArray1, []));
+
+
+let arrayOfCon = arrayOfConsonants(array1);
+
+let setOfConsonats = new Set(arrayOfCon);
+
+let stringOfCon = [...setOfConsonats].join("");
+
+console.log(stringOfCon);
+
+console.log(array1.reduce(buildArray1, []));
+console.log([...new Set(arrayOfConsonants(array1))].join(""))
+
+//////////////////////////////////////////////////////
+
+
+array1.forEach((e) => console.log(e));
+
+console.log(array.sort());
+
+console.log(array1.sort());
+
+
+let student1 = {name: "Pippo", age: 12, gender: "M"}
+
+let student2 = {name: "Pluto", age: 18, gender: "M"}
+
+let student3 = {name: "Topolina", age: 13, gender: "F"}
+
+let student4 = {name: "Paperina", age: 18, gender: "F"}
+
+let students = [student1, student2, student3, student4];
+
+console.log(students.sort());
+
+console.log(students.sort(compareStudents));
+
+function compareStudents(st1, st2) {
+    if (st1.age > st2.age) {
+        return 1;
+    }
+    if (st1.age < st2.age) {
+        return -1;
+    }
+    if (st1.age === st2.age) {
+        return 0;
+    }
+}
+
+
+// function compareStudents2(st1, st2) {
+//     return st1.name.localeCompare(st2.name);
+// }
+// console.log(students.sort(compareStudents2()));
+
+
+
+let athlete1 = {name: "giovanni", surname: "landi", position: 2}
+let athlete2 = {name: "lorena", surname: "landi", position: 2}
+let athlete3 = {name: "pippo", surname: "barbigli", position: 1}
+let athlete4 = {name: "simona", surname: "perri", position: 3}
+let athlete5 = {name: "elmo", surname: "recalcati", position: 3}
+
+
+
+let athletes = [athlete1, athlete2, athlete3, athlete4, athlete5];
+
+
+function comopareByPosition(A1, A2) {
+    if (A1.position > A2.position) {
+        return 1;
+    }
+    if (A1.position < A2.position) {
+        return -1;
+    }
+    if (A1.position = A2.position) {
+        return 0;
+    }
+
+}
+
+
+//console.log("posizione",athletes.sort(comopareByPosition));
+
+
+
+function compareBySurname(a1, a2) {
+    return a1.surname.localeCompare(a2.surname);
+}
+
+//console.log("surname",athletes.sort(compareBySurname));
+
+
+function compareByPositionPlus(A1, A2) {
+    if (A1.position > A2.position) {
+        return 1;
+    }
+    if (A1.position < A2.position) {
+        return -1;
+    }
+    if (A1.position = A2.position) {
+        return A1.surname.localeCompare(A2.surname);
+
+        
+    }
+    else if (A1.surname = A2.surname) {
+        return A1.name.localeCompare(A2.name);
+    }
+}
+
+console.log("plus",athletes.sort(compareByPositionPlus));
+
+
