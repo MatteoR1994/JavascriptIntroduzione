@@ -133,7 +133,7 @@
 
 let array = [12, 345, -1234, 1, 0, 23456, -2, 2, 3];
 
-let array1 = ["Pippo", "Paperone", "Gambadilegno", "Basettoni", "Clarabella", "Osvaldo"]
+let array1 = ["Pippo", "Paperone", "Gambadilegno", "Basettoni", "Clarabella", "Osvaldo", "Paperoga"]
 
 // esercizio 1 - Il massimo in assoluto
 
@@ -237,6 +237,32 @@ console.log("6) Cambiare maiuscole in minuscole e viceversa (con REDUCE lambda)\
 
 // Con FILTER
 console.log("7) Parole che contengono 'r' (con FILTER lambda)\n", array1.filter((element) => element.includes("r")));
+
+// Con FILTER (VERSIONE ANDREA)
+function checkIfContainsR(string) {
+    // Versione verbosa
+    /*if (string.includes("r")) {
+        return true;
+    } else {
+        return false;
+    }*/
+
+    // Miglioramento 1 - In una riga
+    //return string.includes("r");
+}
+
+function checkIfContainsString(string, toCheck) { // Miglioramento 2
+    // Miglioramento 2 - Controllo più generico
+    return string.toLowerCase().includes(toCheck);
+}
+
+//console.log(checkIfContainsString("pippo", "r"));
+
+// VERSIONE VERBOSA - MIGLIORAMENTO 1
+//console.log(array1.filter(checkIfContainsR));
+
+// MIGLIORAMENTO 2
+console.log(array1.filter((e) => checkIfContainsString(e, "ro")));
 
 // Con REDUCE
 function stringContainR(previous, current) {
