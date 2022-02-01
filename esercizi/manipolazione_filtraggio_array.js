@@ -217,7 +217,7 @@ console.log("5) Stringa contenente tutte le cons. dell'array originale, senza ri
 
 /****/
 
-// Esercizio 6 - map => cambiare maiuscole in minuscole e viceversa
+// Esercizio 6 - map => cambiare maiuscole in minuscole e viceversa (la versione con REDUCE è molto più lenta di quella con MAP, per fare cose così si deve usare la MAP)
 
 // Con MAP
 console.log("6) Cambiare maiuscole in minuscole e viceversa (con MAP lambda)\n", array1.map((element) => element[0].toLowerCase() + element.substring(1).toUpperCase()));

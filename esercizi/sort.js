@@ -75,7 +75,7 @@ function compareByPositionPlus(a1, a2) {
         return -1;
     }
 
-    if (a1.position = a2.position) {
+    if (a1.position === a2.position) {
         if (a1.surname === a2.surname) {
             return a1.name.localeCompare(a2.name);
         } else {
